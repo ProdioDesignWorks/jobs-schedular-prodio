@@ -8,9 +8,9 @@
 * Event backed job queue that you can hook into.
 * Optional standalone web-interface dashboard to see jobs with current statuses.
 
-### Example Usage
+# Example Usage
 
-# 1. This is always the first step to initialize the agenda which will auto sync all pending jobs on server or pm2 restart.
+### 1. This is always the first step to initialize the agenda which will auto sync all pending jobs on server or pm2 restart.
 
 ```
 const schedular = require('./schedular');
@@ -19,7 +19,7 @@ schedular.initAgenda(dbName);
 
 ```
 
-# 2. To Schedule an event/job
+### 2. To Schedule an event/job
 
 * apiUrl - (Required) This is the webhook URL where you want to receive the event at specified or scheduled time interval.
 * triggerAt - (Reuired) - It is in the format of "MM/DD/YYYY HH:MM".
@@ -36,7 +36,7 @@ let evenObj = {
 schedular.setEvent(evenObj);
 ```
 
-# 3. To cancel already scheduled event
+### 3. To cancel already scheduled event
 
 * jobId - (Required) This is the jobId with which the job has been initialized.
 
@@ -44,7 +44,7 @@ schedular.setEvent(evenObj);
 schedular.cancelEvent(jobId);
 ```
 
-# 4. To reschedule already scheduled event
+### 4. To reschedule already scheduled event
 
 * jobId - (Required) This is the jobId with which the job has been initialized.
 * jobData - (Required) This is similar to create job JSON Data object which you want to update for the event.
@@ -53,7 +53,7 @@ schedular.cancelEvent(jobId);
 schedular.rescheduleEvent(jobId,jobData);
 ```
 
-### Example Usage (Dashboard)
+# Example Usage (Dashboard)
 
 * You can run directly with `node agenda_dashboard.js` or you can also use `pm2` to run it forever -
 
